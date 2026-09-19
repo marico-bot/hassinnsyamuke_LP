@@ -349,6 +349,11 @@
     font-size:.78rem; color:var(--soft); text-align:center; line-height:1.8;
     margin:14px 0 0;
   }
+  .form-fallback{
+    font-size:.78rem; color:var(--plum-deep); text-align:center; line-height:1.8;
+    margin:10px 0 0; background:var(--plum-soft); border-radius:4px; padding:10px 14px;
+  }
+  .form-fallback a{font-weight:700;}
 
   footer{
     padding:36px 24px 44px; text-align:center;
@@ -751,6 +756,11 @@
         </div>
         <button type="submit" class="btn-main">送信する</button>
         <p class="form-note">送信すると、お使いのメールアプリが起動し、内容が入力された状態で開きます。そのまま送信ボタンを押していただくと完了です。</p>
+        <p class="form-fallback" id="formFallback" hidden>
+          メールアプリが開かない場合は
+          <a id="gmailFallbackLink" href="#" target="_blank" rel="noopener">こちらからGmailで作成</a>
+          してください。
+        </p>
       </form>
 
       <p class="slots">一件ずつ丁寧にヒアリングし、<br>発信での使い方まで考えて設計するため、<br>毎月3枠限定でお受けしています。</p>
@@ -812,6 +822,16 @@
         "本文:",
         message
       ].join("\n");
+
+      // Gmailの作成画面URL（メールアプリが起動しない場合の保険）
+      var gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1"
+        + "&to=" + encodeURIComponent(INQUIRY_EMAIL)
+        + "&su=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(body);
+      var gmailLink = document.getElementById("gmailFallbackLink");
+      var fallback = document.getElementById("formFallback");
+      if(gmailLink) gmailLink.href = gmailUrl;
+      if(fallback) fallback.hidden = false;
 
       window.location.href = "mailto:" + INQUIRY_EMAIL
         + "?subject=" + encodeURIComponent(subject)
