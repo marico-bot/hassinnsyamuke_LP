@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>まりい撮影メニュー｜福岡・北九州の発信者のための写真と動画</title>
+<meta name="description" content="発信を続けている福岡・北九州の女性起業家・発信者のための撮影メニュー。ストーリーズ素材・リール素材・プロフィール写真・iPhone撮り方レッスン。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+  /* ============================================================
+     まりい撮影メニューLP
+     配色: 白 / 薄グレー #F7F4F1 / くすみプラム #7A4A54 のみ
+     ============================================================ */
+  :root{
+    --bg:#FFFFFF;
+    --bg-alt:#F7F4F1;
+    --ink:#322E2B;
+    --soft:#6E6660;
+    --line:#E5DFDA;
+    --plum:#7A4A54;
+    --plum-deep:#5F3841;
+    --plum-soft:#F3EAEC; /* プラムを薄くした背景 */
+    --header-h:60px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Noto Sans JP","Hiragino Sans",-apple-system,sans-serif;
+    font-size:15.5px;
+    line-height:2;
+    letter-spacing:.02em;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:var(--plum);}
+  section{scroll-margin-top:calc(var(--header-h) + 16px);}
+  .inner{max-width:900px; margin:0 auto; padding:0 24px;}
+  .serif{font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;}
+
+  /* ---------- 見出し ---------- */
+  .sec-head{text-align:center; margin-bottom:40px;}
+  .eyebrow{
+    font-size:.72rem; letter-spacing:.24em; color:var(--plum);
+    font-weight:700; text-transform:uppercase; margin-bottom:10px;
+  }
+  /* 折り返しを語のまとまり単位に制御する */
+  .kw{display:inline-block;}
+  h2{
+    font-family:"Zen Old Mincho",serif; font-weight:700;
+    font-size:clamp(1.2rem, 5.7vw, 1.45rem); line-height:1.7; margin:0; text-wrap:balance;
+  }
+  h3{font-family:"Zen Old Mincho",serif; font-weight:700; font-size:1.08rem; line-height:1.6; margin:0 0 .5em;}
+
+  /* ---------- ヘッダー ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,255,255,.94);
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-in{
+    max-width:900px; margin:0 auto; height:var(--header-h);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 20px;
+  }
+  .logo{
+    font-family:"Zen Old Mincho",serif; font-weight:700;
+    font-size:1.05rem; letter-spacing:.14em; color:var(--ink);
+    text-decoration:none;
+  }
+  .logo small{display:block; font-size:.58rem; letter-spacing:.2em; color:var(--soft); font-weight:500;}
+  nav.pc-nav{display:none;}
+  nav.pc-nav a{
+    color:var(--ink); text-decoration:none; font-size:.82rem;
+    margin-left:20px; letter-spacing:.06em;
+  }
+  nav.pc-nav a:hover{color:var(--plum);}
+  .header-cta{
+    display:none;
+    background:var(--plum); color:#fff !important; text-decoration:none;
+    font-size:.8rem; font-weight:700; letter-spacing:.06em;
+    padding:9px 18px; border-radius:999px; margin-left:22px;
+  }
+  .header-cta:hover{background:var(--plum-deep);}
+
+  /* ハンバーガー */
+  .menu-btn{
+    width:44px; height:44px; border:0; background:none; cursor:pointer;
+    display:flex; flex-direction:column; justify-content:center; align-items:center; gap:6px;
+    padding:0;
+  }
+  .menu-btn span{display:block; width:22px; height:1.5px; background:var(--ink); transition:transform .25s, opacity .25s;}
+  .nav-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+  .nav-open .menu-btn span:nth-child(2){opacity:0;}
+  .nav-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+  .sp-nav{
+    display:none; position:fixed; top:var(--header-h); left:0; right:0; z-index:99;
+    background:#fff; border-bottom:1px solid var(--line);
+    padding:12px 24px 28px;
+  }
+  .nav-open .sp-nav{display:block;}
+  .sp-nav a{
+    display:block; padding:13px 4px; color:var(--ink); text-decoration:none;
+    font-size:.95rem; border-bottom:1px solid var(--line); letter-spacing:.08em;
+  }
+  .sp-nav a.sp-cta{
+    margin-top:20px; border:0; background:var(--plum); color:#fff;
+    text-align:center; border-radius:999px; font-weight:700; padding:15px 10px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:calc(var(--header-h) + 56px) 0 64px;
+    background:var(--bg);
+  }
+  .hero-area{
+    font-size:.75rem; letter-spacing:.18em; color:var(--plum); font-weight:700;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:"Zen Old Mincho",serif; font-weight:700;
+    font-size:clamp(1.4rem, 7vw, 1.72rem); line-height:1.85; letter-spacing:.04em;
+    margin:0 0 26px; text-wrap:balance;
+  }
+  .hero h1 em{font-style:normal; color:var(--plum);}
+  .hero-sub{color:var(--ink); font-size:.95rem; margin:0 0 12px;}
+  .hero-sub2{color:var(--soft); font-size:.88rem; margin:0 0 34px;}
+  .hero-photo{
+    aspect-ratio:4/5; max-height:440px; width:100%;
+    object-fit:cover; object-position:50% 50%;
+    background:var(--bg-alt);
+    border-radius:4px; margin:0 0 36px;
+  }
+  .btn-main{
+    display:block; text-align:center; text-decoration:none;
+    background:var(--plum); color:#fff; font-weight:700;
+    font-size:1rem; letter-spacing:.08em;
+    padding:17px 20px; border-radius:999px;
+  }
+  .btn-main:hover{background:var(--plum-deep);}
+  .btn-sub{
+    display:block; text-align:center; text-decoration:none;
+    color:var(--plum); font-weight:700; font-size:.9rem; letter-spacing:.06em;
+    border:1.5px solid var(--plum); border-radius:999px;
+    padding:14px 20px; margin-top:14px;
+  }
+  .btn-sub:hover{background:var(--plum-soft);}
+  .slots{
+    margin:34px 0 0; padding:18px 22px;
+    background:var(--plum-soft); border-radius:4px;
+    font-size:.85rem; line-height:2; color:var(--plum-deep);
+    text-align:center;
+  }
+
+  /* ---------- セクション共通 ---------- */
+  .sec{padding:76px 0;}
+  .sec.alt{background:var(--bg-alt);}
+
+  /* ---------- FOR YOU ---------- */
+  .worries{display:grid; gap:18px;}
+  .worry{
+    background:#fff; border:1px solid var(--line); border-radius:4px;
+    padding:28px 24px;
+  }
+  .sec.alt .worry{border-color:transparent;}
+  .worry .num{
+    font-family:"Zen Old Mincho",serif; font-size:.8rem; letter-spacing:.2em;
+    color:var(--plum); margin-bottom:10px;
+  }
+  .worry h3{font-size:1.1rem; line-height:1.65;}
+  .worry p{margin:0; font-size:.8rem; color:var(--soft); line-height:1.8;}
+
+  /* ---------- CONCEPT ---------- */
+  .concept-body{max-width:620px; margin:0 auto; text-align:center;}
+  .concept-lines{
+    font-family:"Zen Old Mincho",serif; font-size:1.02rem; line-height:2.3;
+    margin:0 0 28px; color:var(--ink);
+  }
+  .concept-text{font-size:.92rem; margin:0; text-align:left;}
+
+  /* ---------- WHY ME ---------- */
+  .reasons{display:grid; gap:20px;}
+  .reason{
+    background:#fff; border-radius:4px; padding:34px 26px 30px;
+    border-top:2px solid var(--plum);
+  }
+  .reason .num{
+    font-family:"Zen Old Mincho",serif; font-size:.8rem; letter-spacing:.2em;
+    color:var(--plum); margin-bottom:10px;
+  }
+  .reason h3{font-size:1.16rem; line-height:1.6; margin-bottom:.65em;}
+  .reason p{margin:0; font-size:.8rem; color:var(--soft); line-height:1.8;}
+  .stats{display:flex; gap:26px; margin:2px 0 16px; flex-wrap:wrap;}
+  .stat .num2{
+    font-family:"Zen Old Mincho",serif; font-weight:700; color:var(--plum);
+    font-size:1.9rem; line-height:1; letter-spacing:0;
+  }
+  .stat .handle{font-size:.72rem; color:var(--soft); margin-top:6px; letter-spacing:.02em;}
+
+  /* ---------- WORKS ---------- */
+  .works-note{text-align:center; font-size:.88rem; color:var(--soft); margin:-24px 0 40px; font-family:"Zen Old Mincho",serif;}
+  .work-cat{margin-bottom:50px;}
+  .work-cat:last-child{margin-bottom:0;}
+  .work-cat h3{
+    text-align:center; margin-bottom:20px; color:var(--plum-deep);
+  }
+  .work-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .work{margin:0;}
+  .work .ph{
+    aspect-ratio:4/5; width:100%; border-radius:4px;
+    object-fit:cover; background:var(--bg-alt); display:block;
+  }
+  .work figcaption{
+    font-size:.78rem; color:var(--soft); line-height:1.6; margin-top:10px;
+    text-align:center;
+  }
+  .reel-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:14px;
+    max-width:460px; margin:0 auto;
+  }
+  .reel-video{
+    aspect-ratio:9/16; width:100%; border-radius:4px;
+    object-fit:cover; background:#000; display:block;
+  }
+  .work-video-wrap{max-width:600px; margin:0 auto;}
+  .work-video-wrap video{
+    width:100%; display:block; border-radius:4px; background:#000;
+    aspect-ratio:16/9; object-fit:cover;
+  }
+  .work-video-caption{
+    text-align:center; font-size:.85rem; color:var(--soft);
+    line-height:1.9; margin-top:16px; font-family:"Zen Old Mincho",serif;
+  }
+
+  /* ---------- MENU ---------- */
+  .menus{display:grid; gap:26px;}
+  .menu-card{
+    background:#fff; border:1px solid var(--line); border-radius:4px;
+    padding:32px 26px 30px;
+  }
+  .sec.alt .menu-card{border-color:transparent;}
+  .menu-card .for{
+    display:inline-block; background:var(--plum-soft); color:var(--plum-deep);
+    font-size:.76rem; font-weight:700; letter-spacing:.04em;
+    border-radius:999px; padding:5px 16px; margin-bottom:14px;
+  }
+  .menu-card h3{font-size:1.18rem; margin-bottom:6px;}
+  .price{
+    font-family:"Zen Old Mincho",serif; font-size:1.65rem; font-weight:700;
+    color:var(--plum); letter-spacing:.02em; margin:2px 0 16px;
+    font-variant-numeric:tabular-nums;
+  }
+  .price small{font-size:.85rem; color:var(--soft); font-weight:500; letter-spacing:0;}
+  .menu-card ul{
+    list-style:none; margin:0 0 18px; padding:0;
+    border-top:1px solid var(--line);
+  }
+  .menu-card li{
+    display:flex; gap:14px; padding:10px 2px; border-bottom:1px solid var(--line);
+    font-size:.87rem; line-height:1.8;
+  }
+  .menu-card li b{
+    flex:0 0 5.2em; color:var(--soft); font-weight:500; font-size:.8rem;
+    padding-top:2px; letter-spacing:.04em;
+  }
+  .menu-card .caution{
+    font-size:.8rem; color:var(--soft); background:var(--bg-alt);
+    border-radius:4px; padding:10px 14px; margin:0 0 18px; line-height:1.9;
+  }
+  .menu-card .btn-main{font-size:.92rem; padding:14px 20px;}
+  .menu-note{
+    margin-top:30px; font-size:.82rem; color:var(--soft); line-height:2;
+    text-align:center;
+  }
+  .tax-note{text-align:center; font-size:.82rem; color:var(--soft); margin:-26px 0 34px;}
+
+  /* ---------- FLOW ---------- */
+  .flow{list-style:none; margin:0; padding:0; max-width:560px; margin-inline:auto;}
+  .flow li{
+    position:relative; padding:0 0 34px 58px;
+  }
+  .flow li::before{
+    content:attr(data-num);
+    position:absolute; left:0; top:0;
+    width:40px; height:40px; border-radius:50%;
+    background:var(--plum-soft); color:var(--plum-deep);
+    font-family:"Zen Old Mincho",serif; font-size:.82rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .flow li:not(:last-child)::after{
+    content:""; position:absolute; left:20px; top:44px; bottom:6px;
+    width:1px; background:var(--line);
+  }
+  .flow h3{font-size:.98rem; margin:0 0 4px; padding-top:7px;}
+  .flow p{margin:0; font-size:.85rem; color:var(--soft); line-height:1.9;}
+
+  /* ---------- INFO ---------- */
+  .info-block{max-width:620px; margin:0 auto;}
+  .info-table{width:100%; border-collapse:collapse; font-size:.9rem; margin-bottom:18px;}
+  .info-table th,.info-table td{
+    border-bottom:1px solid var(--line); padding:13px 8px; text-align:left;
+    vertical-align:top; line-height:1.8;
+  }
+  .info-table th{color:var(--plum-deep); font-weight:700; white-space:nowrap; width:8.5em;}
+  .info-note{font-size:.82rem; color:var(--soft); line-height:2; margin:0;}
+
+  /* ---------- RESERVE ---------- */
+  .reserve{background:var(--plum-soft);}
+  .reserve .sec-head{margin-bottom:26px;}
+  .reserve-lead{text-align:center; font-size:.92rem; margin:0 0 30px;}
+  .reserve .btn-main{max-width:420px; margin:0 auto;}
+  .reserve .slots{background:#fff; max-width:520px; margin-inline:auto;}
+
+  /* ---------- CONTACT FORM ---------- */
+  .contact-form{
+    max-width:520px; margin:0 auto 30px; text-align:left;
+    display:grid; gap:20px;
+  }
+  .form-field label{
+    display:block; font-size:.85rem; font-weight:500; margin-bottom:8px;
+    color:var(--ink);
+  }
+  .form-field .req{
+    display:inline-block; font-size:.66rem; font-weight:700; color:var(--plum);
+    border:1px solid var(--plum); border-radius:3px;
+    padding:1px 6px; margin-left:8px; vertical-align:middle;
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea{
+    width:100%; border:1px solid var(--line); border-radius:4px;
+    padding:12px 14px; font-size:.9rem; font-family:inherit; color:var(--ink);
+    background:#fff;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus{
+    outline:none; border-color:var(--plum);
+  }
+  .form-field textarea{resize:vertical;}
+  .contact-form .btn-main{border:0; cursor:pointer; width:100%; font-size:1rem;}
+  .form-note{
+    font-size:.78rem; color:var(--soft); text-align:center; line-height:1.8;
+    margin:14px 0 0;
+  }
+
+  footer{
+    padding:36px 24px 44px; text-align:center;
+    font-size:.75rem; color:var(--soft); letter-spacing:.08em;
+    border-top:1px solid var(--line);
+  }
+
+  /* ---------- PC ---------- */
+  @media (min-width:768px){
+    body{font-size:16px;}
+    .menu-btn,.sp-nav{display:none !important;}
+    nav.pc-nav{display:flex; align-items:center;}
+    .header-cta{display:inline-block;}
+    .hero{padding-top:calc(var(--header-h) + 90px);}
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;}
+    .hero h1{font-size:2.35rem;}
+    .hero-photo{margin:0; aspect-ratio:3/4; max-height:none;}
+    .hero-ctas{max-width:400px;}
+    .slots{text-align:left; padding:20px 26px;}
+    h2{font-size:1.7rem;}
+    .worries{grid-template-columns:repeat(3,1fr);}
+    .worry{padding:30px 26px;}
+    .reasons{grid-template-columns:repeat(3,1fr);}
+    .work-grid{grid-template-columns:repeat(3,1fr);}
+    .filmstrip{justify-content:center; overflow-x:visible;}
+    .filmstrip .frame{flex-basis:130px;}
+    .menus{grid-template-columns:1fr 1fr;}
+    .sec{padding:100px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+  ★差し替えメモ（実装者向け）
+  1. 申し込み導線: UTAGEへの外部遷移はやめ、#reserve内の問い合わせフォーム
+     （id="contactForm"）で完結する方式にした。送信するとINQUIRY_EMAIL宛の
+     mailtoリンクが開き、フォーム内容（お名前・ふりがな・メール・お問い合わせ
+     内容・本文）が自動で本文に入った状態でメールアプリが起動する。
+     ★宛先は下部 <script> の INQUIRY_EMAIL を書き換えれば変更可能。
+     - メニューカードの「このメニューを申し込む」→ フォームの「お問い合わせ
+       内容」欄を自動選択したうえで #reserve までスクロール
+     - ヘッダー・ヒーロー等の「撮影・レッスンを申し込む」→ 単純に #reserve
+       へスクロール（プランは訪問者がフォーム内で選択）
+     - 注意: mailtoは訪問者側のメールアプリを起動するだけで、実際の送信は
+       訪問者がそのメールアプリ側で送信ボタンを押す必要がある（自動送信は
+       バックエンドが無いと不可）。フォーム下の案内文でその旨を明記済み
+  2. 写真: media/ 配下に実写真を配置済み（hero.jpg / stories-1〜3.jpg / profile-1〜3.jpg）。
+     いずれもGoogle Driveの2026-03-27撮影素材から選定。差し替える場合は
+     同ファイル名を上書きするか、index.html内の src パスを書き換える。
+     - リール素材は実際の動画2本を掲載済み（media/reel-1.mp4 / reel-2.mp4、
+       ポスターは reel-1-poster.jpg / reel-2-poster.jpg）。3枠中2枠のみ使用。
+       差し替える場合は同ファイル名を上書きするか、index.html内の
+       <source src> とposterのパスを書き換える
+     - 映像制作は実際の動画を掲載済み（media/works-video-sample.mp4）。
+       別の作例に差し替える場合は同ファイル名を上書きするか、
+       index.html内の <source src> とposterのパスを書き換える
+  3. TODO（未確定のため非表示）:
+     - 決済方法（振込 or オンライン決済）→ 確定後 INFO セクションに追記
+     - キャンセルポリシー → 確定後 INFO セクションに追記
+     - 名義・ロゴ表記（現状「まりい / marii」仮置き）
+============================================================ -->
+
+<header id="siteHeader">
+  <div class="header-in">
+    <a class="logo serif" href="#top">まりい<small>PHOTO &amp; REEL</small></a>
+    <nav class="pc-nav">
+      <a href="#foryou">お悩み</a>
+      <a href="#concept">コンセプト</a>
+      <a href="#whyme">選ばれる理由</a>
+      <a href="#works">作例</a>
+      <a href="#menu">メニュー</a>
+      <a href="#flow">流れ</a>
+      <a class="header-cta" href="#reserve">撮影・レッスンを申し込む</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="sp-nav" id="spNav">
+    <a href="#foryou">お悩み</a>
+    <a href="#concept">コンセプト</a>
+    <a href="#whyme">選ばれる理由</a>
+    <a href="#works">作例</a>
+    <a href="#menu">撮影メニュー・料金</a>
+    <a href="#flow">ご依頼の流れ</a>
+    <a href="#info">エリア・ご案内</a>
+    <a class="sp-cta" href="#reserve">撮影・レッスンを申し込む</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="inner hero-grid">
+      <div>
+        <p class="hero-area">福岡・北九州で発信を続ける女性起業家・発信者の方へ</p>
+        <h1>発信は続けている。<br>なのに、<em>“使える素材”</em>が<br>足りない。</h1>
+        <p class="hero-sub">ストーリーズも、リールも、プロフィールも。<br>今のあなたと事業が伝わり、そのまま発信に使える写真と動画をつくります。</p>
+        <p class="hero-sub2">自分で撮れるようになりたい方には、iPhone撮影レッスンもご用意しています。</p>
+        <div class="hero-ctas">
+          <a class="btn-main" href="#menu">撮影メニュー・料金を見る</a>
+          <a class="btn-sub" href="#reserve">撮影・レッスンを申し込む</a>
+        </div>
+        <p class="slots">一件ずつ丁寧にヒアリングし、<br>発信での使い方まで考えて設計するため、<br>毎月3枠限定でお受けしています。</p>
+      </div>
+      <img class="hero-photo" src="media/hero.jpg" alt="カメラを手に子どもたちと笑うまりい本人" width="1600" height="1067">
+    </div>
+  </section>
+
+  <!-- FOR YOU -->
+  <section class="sec alt" id="foryou">
+    <div class="inner">
+      <div class="sec-head">
+        <p class="eyebrow">For You</p>
+        <h2><span class="kw">発信を続けるほど、</span><wbr><span class="kw">こんな悩みが</span><span class="kw">増えていませんか？</span></h2>
+      </div>
+      <div class="worries">
+        <div class="worry">
+          <p class="num">01</p>
+          <h3><span class="kw">ストーリーズは毎日出している。</span><wbr><span class="kw">でも、使う写真が</span><span class="kw">いつも同じ。</span></h3>
+          <p>自撮りや過去の写真に頼りがちで、素材のストックが足りない。</p>
+        </div>
+        <div class="worry">
+          <p class="num">02</p>
+          <h3><span class="kw">写真もリール素材も</span><span class="kw">自分で撮っている。</span><wbr><span class="kw">でも、時間がかかるし、</span><span class="kw">これでいいのか</span><span class="kw">自信がない。</span></h3>
+          <p>余白やバランスに毎回迷って、作るたびに時間がかかる。</p>
+        </div>
+        <div class="worry">
+          <p class="num">03</p>
+          <h3><span class="kw">プロフィール写真が、</span><span class="kw">今の自分・今の事業に</span><span class="kw">追いついていない。</span></h3>
+          <p>今のわたしらしさや、仕事への信頼が伝わる一枚に更新したい。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section class="sec" id="concept">
+    <div class="inner">
+      <div class="sec-head">
+        <p class="eyebrow">Concept</p>
+        <h2>きれいなだけで終わらない。<br>発信で“使える”素材を。</h2>
+      </div>
+      <div class="concept-body">
+        <p class="concept-lines">ストーリーズで文字を置ける余白。<br>リールで自然につながる動きやカット。<br>今の事業と人柄が伝わるプロフィール写真。</p>
+        <p class="concept-text">ただきれいに撮るのではなく、撮ったあとに「どこで、どう使うか」まで考えて、毎日の発信で使いやすい写真と動画をつくります。撮影の前に、あなたの発信スタイルと使いたい場面をヒアリングし、そこから逆算して素材を設計するのが、まりいの撮影です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section class="sec alt" id="whyme">
+    <div class="inner">
+      <div class="sec-head">
+        <p class="eyebrow">Why Me</p>
+        <h2>選ばれる理由</h2>
+      </div>
+      <div class="reasons">
+        <div class="reason">
+          <p class="num">01</p>
+          <h3><span class="kw">発信する側だから、</span><wbr><span class="kw">“使いやすい素材”がわかる</span></h3>
+          <div class="stats">
+            <div class="stat"><p class="num2">3.7万人</p><p class="handle">@marii_iphoto</p></div>
+            <div class="stat"><p class="num2">2万人</p><p class="handle">@yuzumama33</p></div>
+          </div>
+          <p>投稿する人の視点で、素材を撮っています。</p>
+        </div>
+        <div class="reason">
+          <p class="num">02</p>
+          <h3><span class="kw">企業に選ばれるクオリティと、</span><wbr><span class="kw">使い方から逆算する設計力</span></h3>
+          <p>企業のPR・タイアップ案件に選ばれてきた実績があります。</p>
+        </div>
+        <div class="reason">
+          <p class="num">03</p>
+          <h3><span class="kw">撮ってもらうことも、</span><wbr><span class="kw">自分で撮れるように</span><span class="kw">なることも選べる</span></h3>
+          <p>元小学校教員 × 写真講座「まりスク」主宰（講座生約80名）。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section class="sec" id="works">
+    <div class="inner">
+      <div class="sec-head">
+        <p class="eyebrow">Works</p>
+        <h2>作例</h2>
+      </div>
+      <p class="works-note">撮って、そのまま使える一枚に。</p>
+
+      <div class="work-cat">
+        <h3>ストーリーズ素材</h3>
+        <div class="work-grid">
+          <figure class="work">
+            <img class="ph" src="media/stories-1.jpg" alt="iPhoneで自撮りをするまりい" loading="lazy">
+            <figcaption>文字がのせやすい、余白のある一枚</figcaption>
+          </figure>
+          <figure class="work">
+            <img class="ph" src="media/stories-2.jpg" alt="MacBookに向かって微笑むまりい" loading="lazy">
+            <figcaption>いつもの仕事風景も、自然体で</figcaption>
+          </figure>
+          <figure class="work">
+            <img class="ph" src="media/stories-3.jpg" alt="床に座りスマホを操作するまりい" loading="lazy">
+            <figcaption>告知にも使える、引きのカット</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="work-cat">
+        <h3>リール素材</h3>
+        <div class="reel-grid">
+          <figure class="work">
+            <video class="reel-video" controls preload="metadata" poster="media/reel-1-poster.jpg" playsinline muted>
+              <source src="media/reel-1.mp4" type="video/mp4">
+            </video>
+            <figcaption>空間ごと魅せる、歩きながらの一カット</figcaption>
+          </figure>
+          <figure class="work">
+            <video class="reel-video" controls preload="metadata" poster="media/reel-2-poster.jpg" playsinline muted>
+              <source src="media/reel-2.mp4" type="video/mp4">
+            </video>
+            <figcaption>質感まで伝わる、料理の寄りカット</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="work-cat">
+        <h3>プロフィール写真</h3>
+        <div class="work-grid">
+          <figure class="work">
+            <img class="ph" src="media/profile-1.jpg" alt="窓辺で微笑むまりいのプロフィール写真" loading="lazy">
+            <figcaption>今のわたしが伝わる一枚</figcaption>
+          </figure>
+          <figure class="work">
+            <img class="ph" src="media/profile-2.jpg" alt="オレンジのシャツで微笑むまりいのプロフィール写真" loading="lazy">
+            <figcaption>文字を入れても崩れない構図</figcaption>
+          </figure>
+          <figure class="work">
+            <img class="ph" src="media/profile-3.jpg" alt="窓辺で微笑む、黒ジャケット姿のまりいのプロフィール写真" loading="lazy">
+            <figcaption>力の抜けた、自然な表情</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="work-cat">
+        <h3>映像制作</h3>
+        <div class="work-video-wrap">
+          <video controls preload="metadata" poster="media/works-video-sample-poster.jpg" playsinline>
+            <source src="media/works-video-sample.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="work-video-caption">Instagramの枠を超えて、<br>インタビュー動画やブランディング映像も制作しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="sec alt" id="menu">
+    <div class="inner">
+      <div class="sec-head">
+        <p class="eyebrow">Menu</p>
+        <h2>撮影メニュー・料金</h2>
+      </div>
+      <p class="tax-note">料金はすべて税込です。</p>
+      <div class="menus">
+
+        <div class="menu-card">
+          <span class="for">使う写真がいつも同じになってしまう方に</span>
+          <h3>ストーリーズ素材写真撮影</h3>
+          <p class="price">19,800<small>円</small></p>
+          <ul>
+            <li><b>撮影方法</b><span>iPhoneで撮影</span></li>
+            <li><b>撮影時間</b><span>約1時間</span></li>
+            <li><b>納品内容</b><span>厳選約20枚をレタッチして納品</span></li>
+          </ul>
+          <a class="btn-main" href="#reserve" data-plan="stories">このメニューを申し込む</a>
+        </div>
+
+        <div class="menu-card">
+          <span class="for">自分で撮る力を身につけたい方に</span>
+          <h3>iPhone撮り方レッスン</h3>
+          <p class="price">27,500<small>円</small></p>
+          <ul>
+            <li><b>レッスン時間</b><span>約2時間</span></li>
+            <li><b>形式</b><span>一緒に撮りながら学ぶ実践型レッスン</span></li>
+            <li><b>内容</b><span>あなたの発信内容に合わせて、構図・余白・明るさの整え方をお伝えします</span></li>
+          </ul>
+          <a class="btn-main" href="#reserve" data-plan="lesson">このメニューを申し込む</a>
+        </div>
+
+        <div class="menu-card">
+          <span class="for">今の自分・今の事業に合った写真へ更新したい方に</span>
+          <h3>プロフィール撮影</h3>
+          <p class="price">49,800<small>円〜</small></p>
+          <ul>
+            <li><b>撮影方法</b><span>一眼カメラで撮影</span></li>
+            <li><b>撮影時間</b><span>約2時間</span></li>
+            <li><b>納品内容</b><span>レタッチ済みデータを納品</span></li>
+            <li><b>オプション</b><span>一眼カメラでの動画素材追加 ＋16,500円</span></li>
+          </ul>
+          <a class="btn-main" href="#reserve" data-plan="profile">このメニューを申し込む</a>
+        </div>
+
+        <div class="menu-card">
+          <span class="for">リール制作の素材撮影に時間がかかっている方に</span>
+          <h3>リール素材動画撮影</h3>
+          <p class="price">44,000<small>円〜</small></p>
+          <ul>
+            <li><b>撮影方法</b><span>iPhoneで撮影</span></li>
+            <li><b>撮影時間</b><span>約2時間</span></li>
+            <li><b>納品内容</b><span>リール数本分の動画素材を設計して撮影・納品</span></li>
+          </ul>
+          <p class="caution">こちらは動画素材の撮影プランです。リール編集は含まれていません。</p>
+          <a class="btn-main" href="#reserve" data-plan="reel">このメニューを申し込む</a>
+        </div>
+
+      </div>
+      <p class="menu-note">「〜」の付くメニューは、撮影時間・ロケーション数・ご希望の納品内容によって料金が変わります。<br>事前ヒアリング後にお見積もりをご案内します。</p>
+      <p class="slots">一件ずつ丁寧にヒアリングし、<br>発信での使い方まで考えて設計するため、<br>毎月3枠限定でお受けしています。</p>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="sec" id="flow">
+    <div class="inner">
+      <div class="sec-head">
+        <p class="eyebrow">Flow</p>
+        <h2>ご依頼の流れ</h2>
+      </div>
+      <ol class="flow">
+        <li data-num="01"><h3>専用予約ページから申込み</h3><p>ご希望のメニューを選んで、予約ページからお申込みください。</p></li>
+        <li data-num="02"><h3>日程調整・事前ヒアリング</h3><p>撮影した素材を「どこで、どう使いたいか」を伺い、内容をすり合わせます。</p></li>
+        <li data-num="03"><h3>事前決済</h3><p>撮影・レッスンの前に、お手続きをお願いしています。</p></li>
+        <li data-num="04"><h3>撮影・レッスン当日</h3><p>リラックスした雰囲気で、楽しみながら進めます。</p></li>
+        <li data-num="05"><h3>データ納品・アフターフォロー</h3><p>撮影メニューはレタッチ後にデータをお渡しします。使い方のご相談もお気軽にどうぞ。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="sec alt" id="info">
+    <div class="inner">
+      <div class="sec-head">
+        <p class="eyebrow">Information</p>
+        <h2>対応エリア・ご案内</h2>
+      </div>
+      <div class="info-block">
+        <table class="info-table">
+          <tr><th>北九州市内</th><td>交通費無料</td></tr>
+          <tr><th>福岡市内</th><td>交通費別途</td></tr>
+          <tr><th>その他のエリア</th><td>要相談</td></tr>
+          <tr><th>撮影場所</th><td>カフェ・ご自宅・屋外・レンタルスペースなど、ご希望に合わせてご相談ください。スタジオや施設を利用する場合は、別途利用料が必要になることがあります。</td></tr>
+        </table>
+        <p class="info-note">撮影場所に迷う場合は、ヒアリングの際にご希望の雰囲気に合わせてご提案します。</p>
+        <!-- TODO（確定後に追記・現時点では公開しない）
+             ・決済方法（振込／オンライン決済など）
+             ・キャンセルポリシー -->
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVE -->
+  <section class="sec reserve" id="reserve">
+    <div class="inner">
+      <div class="sec-head">
+        <p class="eyebrow">Contact</p>
+        <h2>お申し込み・お問い合わせ</h2>
+      </div>
+      <p class="reserve-lead">ご希望のメニューをお選びのうえ、下記フォームよりご連絡ください。<br>「どのメニューが合うかわからない」という段階のご相談も歓迎です。</p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-field">
+          <label for="cfName">お名前<span class="req">必須</span></label>
+          <input type="text" id="cfName" name="name" autocomplete="name" required>
+        </div>
+        <div class="form-field">
+          <label for="cfKana">お名前（ふりがな）<span class="req">必須</span></label>
+          <input type="text" id="cfKana" name="kana" required>
+        </div>
+        <div class="form-field">
+          <label for="cfEmail">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="cfEmail" name="email" autocomplete="email" required>
+        </div>
+        <div class="form-field">
+          <label for="cfPlan">お問い合わせ内容<span class="req">必須</span></label>
+          <select id="cfPlan" name="plan" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="stories">ストーリーズ素材写真撮影（19,800円）</option>
+            <option value="lesson">iPhone撮り方レッスン（27,500円）</option>
+            <option value="profile">プロフィール撮影（49,800円〜）</option>
+            <option value="reel">リール素材動画撮影（44,000円〜）</option>
+            <option value="other">その他のご相談・お問い合わせ</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="cfMessage">本文<span class="req">必須</span></label>
+          <textarea id="cfMessage" name="message" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="btn-main">送信する</button>
+        <p class="form-note">送信すると、お使いのメールアプリが起動し、内容が入力された状態で開きます。そのまま送信ボタンを押していただくと完了です。</p>
+      </form>
+
+      <p class="slots">一件ずつ丁寧にヒアリングし、<br>発信での使い方まで考えて設計するため、<br>毎月3枠限定でお受けしています。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  まりい｜福岡・北九州の発信者のための撮影メニュー<br>
+  &copy; 2026 marii
+</footer>
+
+<script>
+  // ============================================================
+  // ★お問い合わせの送信先メールアドレス
+  // ============================================================
+  var INQUIRY_EMAIL = "marico@mariiphoto.com";
+  var PLAN_LABELS = {
+    stories: "ストーリーズ素材写真撮影（19,800円）",
+    lesson:  "iPhone撮り方レッスン（27,500円）",
+    profile: "プロフィール撮影（49,800円〜）",
+    reel:    "リール素材動画撮影（44,000円〜）",
+    other:   "その他のご相談・お問い合わせ"
+  };
+
+  // メニューカードの「このメニューを申し込む」→ お問い合わせフォームの
+  // 「お問い合わせ内容」欄を自動選択してから #reserve へスクロール
+  var planSelect = document.getElementById("cfPlan");
+  document.querySelectorAll("a[data-plan]").forEach(function(a){
+    a.addEventListener("click", function(){
+      if(planSelect && PLAN_LABELS[a.dataset.plan]){
+        planSelect.value = a.dataset.plan;
+      }
+    });
+  });
+
+  // お問い合わせフォーム送信 → 入力内容を組み立ててメーラーを起動
+  var contactForm = document.getElementById("contactForm");
+  if(contactForm){
+    contactForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      if(!contactForm.reportValidity()) return;
+
+      var name = document.getElementById("cfName").value.trim();
+      var kana = document.getElementById("cfKana").value.trim();
+      var email = document.getElementById("cfEmail").value.trim();
+      var plan = document.getElementById("cfPlan").value;
+      var message = document.getElementById("cfMessage").value.trim();
+      var planLabel = PLAN_LABELS[plan] || "";
+
+      var subject = "【撮影メニューお問い合わせ】" + planLabel;
+      var body = [
+        "お名前: " + name,
+        "ふりがな: " + kana,
+        "メールアドレス: " + email,
+        "お問い合わせ内容: " + planLabel,
+        "",
+        "本文:",
+        message
+      ].join("\n");
+
+      window.location.href = "mailto:" + INQUIRY_EMAIL
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(body);
+    });
+  }
+
+  // ハンバーガーメニュー
+  var body = document.body;
+  var btn = document.getElementById("menuBtn");
+  btn.addEventListener("click", function(){
+    var open = body.classList.toggle("nav-open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  document.querySelectorAll("#spNav a").forEach(function(a){
+    a.addEventListener("click", function(){
+      body.classList.remove("nav-open");
+      btn.setAttribute("aria-expanded","false");
+    });
+  });
+</script>
+</body>
+</html>
